@@ -62,3 +62,5 @@ Watching Codex implement the sprints also helped me understand why inspection ma
 The most useful part of this practicum was practicing the full workflow from spec to implementation to inspection to commit. The most confusing part was GitHub authentication and pushing from the terminal, especially understanding tokens and why an interactive login prompt does not work the same way inside Codex.
 
 ## Unresolved question
+
+None at this time.
