@@ -1,36 +1,37 @@
-# Sprint 1: Basic CSV Inspection
+# Sprint 2: Missing Value Summary
 
 ## Problem Statement
 
-Build a Python command-line tool to inspect CSV files.
+Build on the basic CSV inspection tool by adding a data-quality summary that helps users quickly identify missing values in a CSV file.
 
 ## User Requirements
 
-Goals for this sprint as 3-5 concise, concrete user needs:
-
-1. As a user, I can run the tool from the command line with a CSV file path.
-2. As a user, I can see the CSV column names so I understand the file structure.
-3. As a user, I can see the number of data rows in the CSV file.
-4. As a user, I can see a small preview of the first few rows.
-5. As a user, I receive a clear error message if the file path is missing or invalid.
+1. The tool reports the number of missing values for each column.
+2. The tool reports the missing-value percentage for each column.
+3. The tool treats blank cells and whitespace-only cells as missing.
+4. The tool identifies the columns with the highest missing-value rates.
+5. The Sprint 1 summary output still shows row count, column names, and a preview.
 
 ## Plan
 
-Implement a small command-line interface in Python using standard library modules. The tool will accept a CSV file path argument, read the file safely, count rows, display column headers, and print a short preview. Keep the implementation simple so the first sprint produces a working baseline that can be expanded in later sprints.
+Extend the existing CSV reading loop so it tracks missing values while preserving the Sprint 1 summary behavior. Missing values will be counted per column when a cell is empty or contains only whitespace. After the row count, column names, and preview, the tool will print a missing-value summary sorted by the highest missing percentage so the most important data-quality issues are easiest to see.
 
 ## Tasks
 
-1. Update `main.py` to accept a CSV file path argument.
-2. Validate that the provided path exists and points to a file.
-3. Read the CSV with Python's `csv` module.
-4. Print column names, total data row count, and a preview of the first few rows.
-5. Verify the tool with the provided sample CSV.
-6. Record the sprint outcome in `SUBMISSION.md`.
+1. Update `main.py` to count blank and whitespace-only values per column.
+2. Handle rows that are shorter than the header by counting omitted trailing cells as missing.
+3. Print missing counts and percentages for each column.
+4. Sort the missing-value summary so columns with the highest missing-value percentage appear first.
+5. Keep the Sprint 1 output for file path input, row count, column names, and preview.
+6. Update `README.md` to mention the missing-value summary.
+7. Verify the provided CSV still reports 262 rows and 19 columns.
+8. Verify at least one known missing value appears in the missing-value summary.
+9. Record the Sprint 2 outcome and checks in `SUBMISSION.md`.
 
 ## Out of Scope
 
-This sprint will not clean data, infer column types, detect duplicate identifiers, validate dates, or compute detailed statistics. It will also not add third-party dependencies or support non-CSV file formats.
+This sprint will not fill missing values, modify the CSV file, normalize inconsistent capitalization, validate dates, detect duplicates, or compute numeric statistics. It will not add third-party dependencies or change the command-line interface beyond the existing file path input.
 
 ## Definition of Done
 
-The sprint is done when the command-line tool runs successfully against the provided CSV file, prints headers, row count, and a short preview, handles missing or invalid file paths with clear messages, and the completed work is summarized in `SUBMISSION.md`.
+Sprint 2 is done when the tool still runs with the provided CSV path, preserves the Sprint 1 row count, column list, and preview, and adds a missing-value summary with counts and percentages by column. The output should make columns with the most missing values easy to spot, the README should mention the new behavior, and `SUBMISSION.md` should summarize the implementation and verification.

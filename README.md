@@ -16,4 +16,4 @@ Inspect another CSV file by passing its path:
 uv run main.py path\to\file.csv
 ```
 
-The tool prints the CSV row count, column names, and a preview of the first few data rows.
+The tool prints the CSV row count, column names, a preview of the first few data rows, and a missing-value summary for each column. Missing-value counts treat blank cells and whitespace-only cells as missing.
