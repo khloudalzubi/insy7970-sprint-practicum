@@ -32,13 +32,20 @@ Sprint 1 commit: `Implement sprint 1`
 
 ## Sprint 2 summary
 
+Sprint 2 theme: missing-value summary.
+
+Codex prompt used before editing `sprint2.md`: "I have updated docs/specs/sprint2.md with a Sprint 2 problem statement and 5 user requirements. Follow this loop: review/edit if needed -> implement -> inspect -> run/check. Making sure Sprint 2 tests both the new behavior and the Sprint 1 behavior that should still work."
+
 For Sprint 2, I chose the missing-value summary theme because the provided CSV has realistic blank fields and this was a natural extension of the basic inspection tool. I updated `docs/specs/sprint2.md` with requirements for missing counts, missing percentages, whitespace-only missing values, highest-missing columns, and preserving Sprint 1 behavior.
 
 I ran the Sprint 2 implementation with `uv run main.py data/datatest.csv`. The run still reported 262 rows and 19 columns, and it added a `Missing values:` section showing `closed_at: 72 missing (27.5%)` as the largest missing-value issue. I independently checked the CSV with a short Python `csv` module command and confirmed the same row count, column count, and nonzero missing-value counts.
 
-I also reran Sprint 1 behavior checks: `uv run main.py data/missing.csv` still returned `Error: file not found: data\missing.csv`, and `uv run main.py` still showed that `csv_path` is required. The Sprint 2 definition of done was met because the tool preserves the original summary, adds missing-value counts and percentages, sorts the most-missing columns first, and the README now describes the new output.
+I also reran Sprint 1 behavior checks: `uv run main.py data/missing.csv` still returned `Error: file not found: data\missing.csv`, and `uv run main.py` still showed that `csv_path` is required. These checks helped confirm that Sprint 2 added behavior without breaking the Sprint 1 command-line workflow.
 
-Sprint 2 commit: `Implement sprint 2 missing value summary`
+The Sprint 2 definition of done was met. The tool still runs with the provided CSV path and preserves the Sprint 1 row count, column list, and preview. It now adds missing-value counts and percentages by column, sorted so the most-missing column appears first. The README also describes the new missing-value summary, and `SUBMISSION.md` records the implementation and verification.
+
+Sprint 2 commit: `d630c53` (`Implement sprint 2 missing value summary`)
+Sprint 2 push status: pushed manually to GitHub after commit `d630c53`.
 
 ## Workflow reflection
 
