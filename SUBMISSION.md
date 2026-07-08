@@ -49,6 +49,16 @@ Sprint 2 push status: pushed manually to GitHub after commit `d630c53`.
 
 ## Workflow reflection
 
+This practicum connected directly to Lecture 03A because Git helped me see and control my work as a sequence of intentional changes. Instead of editing everything at once, I used `git status`, `git diff`, and separate commits to check what changed before saving each sprint. That made the project feel safer because I could tell exactly what belonged to Sprint 1 and what belonged to Sprint 2.
+
+Also, starting with a sprint spec changed how I used Codex. When I wrote the problem statement and user requirements first, Codex had a clearer target and stayed closer to the sprint goal. The specs helped me separate what the user needed from how the code would be implemented.
+
+`uv` made running the project simple and repeatable. I used `uv run main.py data/datatest.csv` to test the tool without needing to manually manage a Python environment. That made it easier to focus on whether the tool worked instead of getting stuck on setup.
+
+Watching Codex implement the sprints also helped me understand why inspection matters. I did not just accept the code; I checked the files, ran the commands, compared the output to the CSV, and reviewed the Git diff before committing.
+
 ## Practicum feedback
+
+The most useful part of this practicum was practicing the full workflow from spec to implementation to inspection to commit. The most confusing part was GitHub authentication and pushing from the terminal, especially understanding tokens and why an interactive login prompt does not work the same way inside Codex.
 
 ## Unresolved question
